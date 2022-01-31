@@ -14,6 +14,8 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Adding a new MFE involves adding a new app to the project using the `@angular-architects/module-federation` schematic, then editing its and the shell's `webpack.config.js`. In the child app's `webpack.config.js`, you will need to add the root module to its exposures. For the shell's, you will need to add the new app as a remote.
 
+You will also need to update the shell's `types.d.ts` in order for TypeScript to not freak out before compile time. See the existing file for an example and how it relates to the shell's `webpack.config.js`.
+
 Summary:
 1. `ng add @angular-architects/module-federation --project <project name> --port <port>`
 2. Edit the new project's `webpack.config.js` to expose its root module and add it to the shell's `webpack.config.js` remotes.
