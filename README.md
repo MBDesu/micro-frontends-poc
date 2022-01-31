@@ -20,7 +20,8 @@ Summary:
 1. `ng add @angular-architects/module-federation --project <project name> --port <port>`
 2. Edit the new project's `webpack.config.js` to expose its root module and add it to the shell's `webpack.config.js` remotes.
 3. Add routes to the shell's routing module to make the MFE accessible from the shell app
-4. Update the shared array as well if necessary
+4. Update the shared array as well if necessary to make common dependencies available to the new MFE
+5. Update the shell's `types.d.ts` so TypeScript doesn't freak out before compile time.
 
 See the existing `wepback.config.js` files in the shell and existing MFEs for examples.
 
