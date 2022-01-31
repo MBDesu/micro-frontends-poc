@@ -12,12 +12,15 @@ Run `npm run run:all` for a dev server. Navigate to `http://localhost:5000/`. Th
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-Adding a new MFE involves adding a new app to the project using the `@angular-architects/module-federation` schematic, then editing its and the shell's `webpack.config.js`. In the child app's `webpack.config.js`, you will need to add the root module to its exposures. For the shell's, you will need to add the new app as a remote. See the existing `wepback.config.js` files for examples.
+Adding a new MFE involves adding a new app to the project using the `@angular-architects/module-federation` schematic, then editing its and the shell's `webpack.config.js`. In the child app's `webpack.config.js`, you will need to add the root module to its exposures. For the shell's, you will need to add the new app as a remote.
 
 Summary:
 1. `ng add @angular-architects/module-federation --project <project name> --port <port>`
-2. Edit the new project's `webpack.config.js` and add it to the shell's `webpack.config.js` remotes.
-3. Update the shared array as well if necessary
+2. Edit the new project's `webpack.config.js` to expose its root module and add it to the shell's `webpack.config.js` remotes.
+3. Add routes to the shell's routing module to make the MFE accessible from the shell app
+4. Update the shared array as well if necessary
+
+See the existing `wepback.config.js` files in the shell and existing MFEs for examples.
 
 
 ## Further help
